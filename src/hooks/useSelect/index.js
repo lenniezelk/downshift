@@ -420,10 +420,17 @@ function useSelect(userProps = {}) {
         })
       }
       const toggleButtonHandleKeyDown = event => {
+        console.log('ABC.......')
         const key = normalizeArrowKey(event)
+        console.log('DEF.......', key)
+
         if (key && toggleButtonKeyDownHandlers[key]) {
+          console.log('GHI.......')
+
           toggleButtonKeyDownHandlers[key](event)
         } else if (isAcceptedCharacterKey(key)) {
+          console.log('JKL.......')
+
           dispatch({
             type: stateChangeTypes.ToggleButtonKeyDownCharacter,
             key,
